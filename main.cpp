@@ -12,6 +12,7 @@
 #include <vector>
 
 using namespace std;
+const string python = "python3";
 
 int main() {
     // Create a vector to store NHLDraft objects
@@ -95,6 +96,11 @@ int main() {
     getDataFromFile("../nhldraft.csv", draftPicks2Sort);
     twoSort(draftPicks2Sort, reads, writes);
     cout << "Two-Sort\nReads: " << reads << "\nWrites: " << writes << endl;
+
+    // Read in data files in Python
+    string command;
+    command = python + "../graph_generator.py " + "reads data.csv";
+    system(command.c_str());
 
     return 0;
 }
