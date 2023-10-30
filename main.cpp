@@ -167,20 +167,33 @@ int main() {
         writes = 0;
     }
 
+    // Two-Sort
+    subVec.clear();
+    readsFile << '\n';
+    writesFile << '\n';
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        twoSort(subVec, reads, writes);
+        // Write the read and write counts to their respective files
+        readsFile << reads << ',';
+        writesFile << writes << ',';
+        // Reset read and write counts for next sort
+        reads = 0;
+        writes = 0;
+    }
+
+    // Close the read and write count files in C++
     readsFile.close();
     writesFile.close();
-
-    // Two-Sort
-    vector<NHLDraft> draftPicks2Sort;
-    getDataFromFile("../nhldraft.csv", draftPicks2Sort);
-    twoSort(draftPicks2Sort, reads, writes);
-    cout << "Two-Sort\nReads: " << reads << "\nWrites: " << writes << endl;
 
     // Read in data files in Python
     string command;
     command = python + " ../graph_generator.py " + "../data/reads_data.csv" + " ../data/writes_data.csv";
     system(command.c_str());
-
 
     return 0;
 }
