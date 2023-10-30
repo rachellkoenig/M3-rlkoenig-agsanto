@@ -47,7 +47,7 @@ plt.ylabel('Reads per Algorithm')
 plt.title('Reads / Data Set Size')
 
 plt.legend(loc='best')
-plt.savefig(f'GraphOfReads.png')
+plt.savefig('..images/GraphOfReads.png')
 plt.show()
 
 # Plot writes
@@ -64,7 +64,7 @@ plt.ylabel('Writes per Algorithm')
 plt.title('Writes / Data Set Size')
 
 plt.legend(loc='best')
-plt.savefig(f'GraphOfWrites.png')
+plt.savefig('..images/GraphOfWrites.png')
 plt.show()
 # fig, ax = plt.subplots()
 # width = 0.35
