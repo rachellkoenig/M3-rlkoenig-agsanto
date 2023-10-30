@@ -18,7 +18,11 @@ int main() {
     // Create a vector to store NHLDraft objects
     vector<NHLDraft> draftPicks;
     // Populate the vector with NHLDraft objects
-    getDataFromFile("../nhldraft.csv", draftPicks);
+    if (!getDataFromFile("../nhldraft.csv", draftPicks)) {
+        // If the file cannot be read from, print a message and end the program
+        cout << "nhldraft.csv was in a bad state and could not be read from." << endl;
+        return 0;
+    }
 
     // Create two file handler objects
     ofstream readsFile, writesFile;
