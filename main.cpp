@@ -23,8 +23,8 @@ int main() {
     // Create two file handler objects
     ofstream readsFile, writesFile;
     // Open the files to write to
-    readsFile.open("../data/reads data.csv");
-    writesFile.open("../data/writes data.csv");
+    readsFile.open("../data/reads_data.csv");
+    writesFile.open("../data/writes_data.csv");
 
     // Integers to hold the number of reads and writes
     int reads = 0, writes = 0;
@@ -99,8 +99,9 @@ int main() {
 
     // Read in data files in Python
     string command;
-    command = python + "../graph_generator.py " + "reads data.csv";
+    command = python + " ../graph_generator.py " + "../data/reads_data.csv" + " ../data/writes_data.csv";
     system(command.c_str());
+
 
     return 0;
 }
