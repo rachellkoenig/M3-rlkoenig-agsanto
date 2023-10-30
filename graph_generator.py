@@ -7,15 +7,15 @@ import matplotlib.pyplot as plt
 reads_file = sys.argv[1]
 writes_file = sys.argv[2]
 
-reads_Bubble = []
-reads_Selection = []
-reads_Insertion = []
-reads_Merge = []
-reads_QuickStable = []
-reads_QuickUnStable = []
-reads_Heap = []
+reads_Bubble = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_Selection = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_Insertion = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_Merge = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_QuickStable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_QuickUnStable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_Heap = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-writes = []
+
 size = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 
 reads_file = open(reads_file, 'r')
@@ -24,13 +24,13 @@ writes_file = open(writes_file, 'r')
 
 # Open the file
 
-plt.plot(size, reads_Bubble, marker='b', label='BubbleSort reads')
-plt.plot(size, reads_Selection, marker='s', label='Slection reads')
-plt.plot(size, reads_Insertion, marker='i', label='Insetion reads')
-plt.plot(size, reads_Merge, marker='m', label='Merge reads')
-plt.plot(size, reads_QuickStable, marker='qs', label='Quick stable reads')
-plt.plot(size, reads_QuickUnStable, marker='qu', label='quick unstable reads')
-plt.plot(size, reads_Heap, marker='h', label='heap reads')
+plt.plot(size, reads_Bubble, label='BubbleSort reads')
+plt.plot(size, reads_Selection, label='Slection reads')
+plt.plot(size, reads_Insertion, label='Insetion reads')
+plt.plot(size, reads_Merge, label='Merge reads')
+plt.plot(size, reads_QuickStable, label='Quick stable reads')
+plt.plot(size, reads_QuickUnStable, label='quick unstable reads')
+plt.plot(size, reads_Heap, label='heap reads')
 
 plt.xlabel('Writes / Data Set Size')
 plt.ylabel('Reads per Algorithm')
