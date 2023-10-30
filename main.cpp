@@ -103,7 +103,7 @@ int main() {
 
     // Read in data files in Python
     string command;
-    command = python + " ../graph_generator.py " + "../data/reads_data.csv" + " ../data/writes_data.csv" + " BubbleSort";
+    command = python + " ../graph_generator.py " + "../data/reads_data.csv" + " ../data/writes_data.csv";
     system(command.c_str());
 
 
