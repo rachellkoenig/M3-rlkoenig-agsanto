@@ -38,49 +38,49 @@ int main() {
     for(int i = 1000; i > 0; i -= 100) {
         // Resize the vector and write size to files
         draftPicks.resize(i);
-        readsFile << i << ",";
-        writesFile << i << ",";
+        readsFile << i << "\n";
+        writesFile << i << "\n";
 
         // Bubble Sort
         bubbleSort(draftPicks, reads, writes);
-        readsFile << reads << ",";
-        writesFile << writes << ",";
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
         // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
 
         // Selection Sort
         selectionSort(draftPicks, reads, writes);
-        readsFile << reads << ",";
-        writesFile << writes << ",";
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
         reads = 0;
         writes = 0;
 
         // Insertion Sort
         insertionSort(draftPicks, reads, writes);
-        readsFile << reads << ",";
-        writesFile << writes << ",";
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
         reads = 0;
         writes = 0;
 
         // Merge Sort
         mergeSort(draftPicks, reads, writes);
-        readsFile << reads << ",";
-        writesFile << writes << ",";
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
         reads = 0;
         writes = 0;
 
         // Quick Sort - Stable
         quickSortStable(draftPicks, reads, writes);
-        readsFile << reads << ",";
-        writesFile << writes << ",";
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
         reads = 0;
         writes = 0;
 
         // Quick Sort - Unstable
         quickSortUnstable(draftPicks, reads, writes);
-        readsFile << reads << ",";
-        writesFile << writes << ",";
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
         reads = 0;
         writes = 0;
 
@@ -103,7 +103,7 @@ int main() {
 
     // Read in data files in Python
     string command;
-    command = python + " ../graph_generator.py " + "../data/reads_data.csv" + " ../data/writes_data.csv";
+    command = python + " ../graph_generator.py " + "../data/reads_data.csv" + " ../data/writes_data.csv" + " BubbleSort";
     system(command.c_str());
 
 
