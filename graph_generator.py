@@ -7,13 +7,23 @@ import matplotlib.pyplot as plt
 reads_file = sys.argv[1]
 writes_file = sys.argv[2]
 
-reads_Bubble = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-reads_Selection = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-reads_Insertion = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-reads_Merge = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-reads_QuickStable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-reads_QuickUnStable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-reads_Heap = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+reads_Bubble = []
+reads_Selection = []
+reads_Insertion = []
+reads_Merge = []
+reads_QuickStable = []
+reads_QuickUnStable = []
+reads_Heap = []
+
+writes_Bubble = []
+writes_Selection = []
+writes_Insertion = []
+writes_Merge = []
+writes_QuickStable = []
+writes_QuickUnStable = []
+writes_Heap = []
+
+
 
 
 size = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
@@ -23,7 +33,7 @@ writes_file = open(writes_file, 'r')
 
 
 # Open the file
-
+# Plot Reads
 plt.plot(size, reads_Bubble, label='BubbleSort reads')
 plt.plot(size, reads_Selection, label='Slection reads')
 plt.plot(size, reads_Insertion, label='Insetion reads')
@@ -32,12 +42,29 @@ plt.plot(size, reads_QuickStable, label='Quick stable reads')
 plt.plot(size, reads_QuickUnStable, label='quick unstable reads')
 plt.plot(size, reads_Heap, label='heap reads')
 
-plt.xlabel('Writes / Data Set Size')
+plt.xlabel('Reads / Data Set Size')
 plt.ylabel('Reads per Algorithm')
 plt.title('Reads / Data Set Size')
 
 plt.legend(loc='best')
 plt.savefig(f'GraphOfReads.png')
+plt.show()
+
+# Plot writes
+plt.plot(size, writes_Bubble, label='BubbleSort reads')
+plt.plot(size, writes_Selection, label='Slection reads')
+plt.plot(size, writes_Insertion, label='Insetion reads')
+plt.plot(size, writes_Merge, label='Merge reads')
+plt.plot(size, writes_QuickStable, label='Quick stable reads')
+plt.plot(size, writes_QuickUnStable, label='quick unstable reads')
+plt.plot(size, writes_Heap, label='heap reads')
+
+plt.xlabel('Writes / Data Set Size')
+plt.ylabel('Writes per Algorithm')
+plt.title('Writes / Data Set Size')
+
+plt.legend(loc='best')
+plt.savefig(f'GraphOfWrites.png')
 plt.show()
 # fig, ax = plt.subplots()
 # width = 0.35
