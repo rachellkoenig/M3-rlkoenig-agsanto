@@ -1,12 +1,11 @@
 import sys
 import matplotlib.pyplot as plt
 
-
-
 # Store command line arguments
 reads_file = sys.argv[1]
 writes_file = sys.argv[2]
 
+# Lists to hold the read counts of each algorithm
 reads_Bubble = []
 reads_Selection = []
 reads_Insertion = []
@@ -15,6 +14,7 @@ reads_QuickStable = []
 reads_QuickUnStable = []
 reads_Heap = []
 
+# Lists to hold the write counts of each algorithm
 writes_Bubble = []
 writes_Selection = []
 writes_Insertion = []
@@ -78,8 +78,3 @@ plt.show()
 #
 # ax.set_xticklabels(x_pos)
 # ax.legend()
-
-
-# Plot reads
-
-
