@@ -8,6 +8,7 @@ include_directories(.)
 add_executable(M3-rlkoenig-agsanto
         main.cpp
         NHLDraft.h
+        NHLDraft.cpp
         bubbleSort.h
         heapSort.h
         insertionSort.h
