@@ -32,62 +32,125 @@ int main() {
 
     // Integers to hold the number of reads and writes
     int reads = 0, writes = 0;
+    // Create a vector to be populated with a subset of draftPicks' elements
+    vector<NHLDraft> subVec;
+    // Re-size draftPicks to 1000
+    draftPicks.resize(1000);
 
-    // Perform all sorting algorithms on draftPicks and record reads and writes
-    // Loop while resizing draftPicks to test the sorting algorithms on different sized vectors
-    for(int i = 1000; i > 0; i -= 100) {
-        // Resize the vector and write size to files
-        draftPicks.resize(i);
-        readsFile << i << "\n";
-        writesFile << i << "\n";
-
-        // Bubble Sort
-        bubbleSort(draftPicks, reads, writes);
+    // Bubble Sort
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        bubbleSort(subVec, reads, writes);
+        // Write the read and write counts to their respective files
         readsFile << reads << "\n";
         writesFile << writes << "\n";
         // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
+    }
 
-        // Selection Sort
-        selectionSort(draftPicks, reads, writes);
+    // Selection Sort
+    subVec.clear();
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        selectionSort(subVec, reads, writes);
+        // Write the read and write counts to their respective files
         readsFile << reads << "\n";
         writesFile << writes << "\n";
+        // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
+    }
 
-        // Insertion Sort
-        insertionSort(draftPicks, reads, writes);
+    // Insertion Sort
+    subVec.clear();
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        insertionSort(subVec, reads, writes);
+        // Write the read and write counts to their respective files
         readsFile << reads << "\n";
         writesFile << writes << "\n";
+        // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
+    }
 
-        // Merge Sort
-        mergeSort(draftPicks, reads, writes);
+    // Merge Sort
+    subVec.clear();
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        mergeSort(subVec, reads, writes);
+        // Write the read and write counts to their respective files
         readsFile << reads << "\n";
         writesFile << writes << "\n";
+        // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
+    }
 
-        // Quick Sort - Stable
-        quickSortStable(draftPicks, reads, writes);
+    // Quick Sort - Stable
+    subVec.clear();
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        quickSortStable(subVec, reads, writes);
+        // Write the read and write counts to their respective files
         readsFile << reads << "\n";
         writesFile << writes << "\n";
+        // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
+    }
 
-        // Quick Sort - Unstable
-        quickSortUnstable(draftPicks, reads, writes);
+    // Quick Sort - Unstable
+    subVec.clear();
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        quickSortUnstable(subVec, reads, writes);
+        // Write the read and write counts to their respective files
         readsFile << reads << "\n";
         writesFile << writes << "\n";
+        // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
+    }
 
-        // Heap Sort
-        heapSort(draftPicks, reads, writes);
-        readsFile << reads << endl;
-        writesFile << writes << endl;
+    // Heap Sort
+    subVec.clear();
+    for (int i = 100; i <= 1000; i += 100) {
+        // Add 100 elements from draftPicks to subVec
+        for (int j = i-100; j < i; ++j) {
+            subVec.push_back(draftPicks[j]);
+        }
+        // Sort subVec which contains the first 100, 200, 300, etc. elements from draftPicks
+        heapSort(subVec, reads, writes);
+        // Write the read and write counts to their respective files
+        readsFile << reads << "\n";
+        writesFile << writes << "\n";
+        // Reset read and write counts for next sort
         reads = 0;
         writes = 0;
     }
